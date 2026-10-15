@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>癌症風險地圖｜如果罹癌，需要準備多少錢？</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
 <style>
 :root{--n:#0b2e59;--b:#1663b8;--t:#0aa39a;--o:#f08a24;--bg:#f3f7fb;--l:#e3eaf2;--tx:#1b2a3a;--mu:#5d6e80}
 *{box-sizing:border-box}html,body{margin:0;overflow-x:hidden}
@@ -87,18 +87,86 @@ h2 .ic,h3 .ic{display:inline-grid;place-items:center;width:1.7em;height:1.7em;bo
 .stage.on>*{animation:up .45s both}.stage.on>*:nth-child(2){animation-delay:.05s}.stage.on>*:nth-child(3){animation-delay:.1s}.stage.on>*:nth-child(4){animation-delay:.15s}
 @keyframes up{from{opacity:0;transform:translateY(10px)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* ===== editorial carousel theme ===== */
+:root{--ink:#24211e;--cream:#f6f2ea;--gold:#b8914f;--gold2:#d9b878;--line:#d9cfbf;--n:#24211e;--b:#3b4a5e;--t:#7a8f7e;--o:#b8914f;--bg:#f6f2ea;--l:#e8e0d2;--tx:#2a2622;--mu:#7a7064}
+body{background:var(--cream)!important;color:var(--tx)}
+h1,h2,.serif{font-family:'Noto Serif TC','Noto Sans TC',serif;letter-spacing:.02em}
+h1,h2,h3{color:var(--ink)}
+.hl{font-style:normal;color:var(--gold);font-weight:900}
+.mark{background:linear-gradient(transparent 62%,rgba(217,184,120,.45) 0);font-weight:700}
+.top{background:var(--ink);border-bottom:1px solid #3a352f}.top b{color:var(--gold2);letter-spacing:.08em}
+.steps i.on{background:var(--gold2)!important}
+.card{background:#fffdf9;border:1px solid var(--line);border-radius:6px;box-shadow:none}
+.card:hover{box-shadow:0 4px 14px rgba(36,33,30,.06)}
+.cost,.q{border-radius:6px;border:1px solid var(--line);background:#fffdf9}
+.q.sel{border-color:var(--gold);background:#fbf5e9;box-shadow:none}.q input{accent-color:var(--gold)}
+.hero{background:linear-gradient(160deg,#2c2824,#1d1b19);border-radius:6px;color:#f2ece1;border:1px solid #3a352f}
+.hero h1{color:#f2ece1;font-size:2.2em}.hero .lead{color:#cfc5b4}.hero .stat div{background:transparent;border:1px solid #4a433b;border-radius:4px}.hero .stat b{color:var(--gold2)}
+.hero .btn{background:var(--gold2);color:#1d1b19}.hero::after{display:none}
+.btn{background:var(--ink);border-radius:4px;box-shadow:none;letter-spacing:.04em}
+.btn.o{background:var(--gold)}.btn.t{background:#3b4a5e}.btn.g{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.seg button{border-color:var(--ink);color:var(--ink);border-radius:4px}.seg button.on{background:var(--ink);color:#f2ece1}
+.chips button{border-radius:4px;border-color:var(--line)}.chips button.on{border-color:var(--gold);background:#fbf5e9}
+.note{background:#fbf7ef;border-left:3px solid var(--gold);border-radius:0;color:#4a4339}
+.warn{background:#f8f1e4}
+.pill{border-radius:3px;background:#efe7d8}.pill.t{background:#e6ece4;color:#4f6352}
+.demo{background:#f3e6c8;color:#7a5a1c;border-radius:2px}.ver{background:#e3ebe2;color:#3f5a44;border-radius:2px}
+h2 .ic,h3 .ic{background:transparent;border:1px solid var(--line);border-radius:4px}
+.big.neg,.neg{color:#a5652a}.pos{color:#4f6e58}
+.slidehd{display:flex;justify-content:space-between;align-items:center;font-size:.85em;color:var(--mu);letter-spacing:.1em;border-bottom:1px solid var(--line);padding:4px 0 8px;margin-bottom:10px}
+.slidehd b{color:var(--gold);font-weight:700}
+.slideft{text-align:center;font-size:.78em;color:var(--mu);letter-spacing:.15em;border-top:1px solid var(--line);margin-top:26px;padding-top:10px}
+.slideft b{color:var(--gold)}
+.small{font-size:.78em;color:var(--mu)}
+/* intro carousel */
+.carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;-webkit-overflow-scrolling:touch}
+.slide{flex:0 0 min(88%,520px);scroll-snap-align:start;background:linear-gradient(160deg,#2c2824,#1d1b19);color:#f2ece1;border-radius:6px;padding:20px;border:1px solid #3a352f;display:flex;flex-direction:column;min-height:440px}
+.slide .shd{display:flex;justify-content:space-between;font-size:.8em;color:#cfc5b4;letter-spacing:.1em}.slide .shd b{color:var(--gold2)}
+.slide h3{font-family:'Noto Serif TC',serif;color:#f2ece1;font-size:1.5em;line-height:1.45;margin:28px 0 14px}
+.slide h3 .hl{color:var(--gold2);display:block;font-size:1.25em}
+.slide p{color:#d9d0c0;margin:6px 0}.slide .sft{margin-top:auto;padding-top:14px;border-top:1px solid #4a433b;font-size:.75em;color:#a99f8f;letter-spacing:.12em;text-align:center}
+.tl{display:flex;justify-content:space-between;border-top:2px solid var(--gold2);padding-top:6px;margin:12px 0;font-size:.85em;color:#d9d0c0}.tl span:last-child{color:var(--gold2);font-weight:700}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0}.vs>div{border:1px solid #5a5248;border-radius:4px;padding:10px}.vs b{display:block;font-size:1.15em;color:var(--gold2)}
+.vs>div:first-child b{color:#c9bfae}
+.card .vs>div{border-color:var(--line)}.card .vs b{color:var(--gold)}
+.num{list-style:none;padding:0;margin:8px 0}.num li{padding:4px 0;border-bottom:1px dashed #4a433b}
+.dots{text-align:center;color:var(--mu);font-size:.8em}
+.ckt{width:100%;border-collapse:collapse}.ckt th,.ckt td{border:1px solid var(--line);padding:10px 6px;text-align:center}.ckt th{background:#f3ece0;color:var(--ink);width:auto}.ckt td:first-child{text-align:left;font-weight:700}
+.ckt input{width:20px;height:20px;accent-color:var(--gold)}
 </style></head><body>
 <div class="top"><div class="row"><b>🗺️ 癌症風險地圖</b><div class="steps" id="steps"></div><small id="stepname"></small></div></div>
 <main>
 
 <!-- HOME -->
 <section class="stage on" id="s0">
-<div class="hero"><svg class="mascot" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="55" r="38" fill="#fff"/><circle cx="50" cy="55" r="38" fill="url(#mg)" opacity=".25"/><defs><linearGradient id="mg"><stop offset="0" stop-color="#19c1b5"/><stop offset="1" stop-color="#1663b8"/></linearGradient></defs><path d="M50 10c-6 0-9 6-6 10" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="50" cy="9" r="5" fill="#f6c04d"/><circle cx="37" cy="52" r="5" fill="#0b2e59"/><circle cx="63" cy="52" r="5" fill="#0b2e59"/><circle cx="39" cy="50" r="1.6" fill="#fff"/><circle cx="65" cy="50" r="1.6" fill="#fff"/><circle cx="29" cy="63" r="5" fill="#f8b4c4"/><circle cx="71" cy="63" r="5" fill="#f8b4c4"/><path d="M41 66q9 8 18 0" stroke="#0b2e59" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M42 80h16M50 72v16" stroke="#f08a24" stroke-width="4" stroke-linecap="round"/></svg><h1>如果癌症，突然發生在你身上？</h1>
+<div class="hero"><svg class="mascot" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="55" r="38" fill="#fff"/><circle cx="50" cy="55" r="38" fill="url(#mg)" opacity=".25"/><defs><linearGradient id="mg"><stop offset="0" stop-color="#19c1b5"/><stop offset="1" stop-color="#1663b8"/></linearGradient></defs><path d="M50 10c-6 0-9 6-6 10" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="50" cy="9" r="5" fill="#f6c04d"/><circle cx="37" cy="52" r="5" fill="#0b2e59"/><circle cx="63" cy="52" r="5" fill="#0b2e59"/><circle cx="39" cy="50" r="1.6" fill="#fff"/><circle cx="65" cy="50" r="1.6" fill="#fff"/><circle cx="29" cy="63" r="5" fill="#f8b4c4"/><circle cx="71" cy="63" r="5" fill="#f8b4c4"/><path d="M41 66q9 8 18 0" stroke="#0b2e59" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M42 80h16M50 72v16" stroke="#f08a24" stroke-width="4" stroke-linecap="round"/></svg><h1>如果癌症，<br><em class="hl">突然發生在你身上？</em></h1>
 <p class="lead">你了解自己的生活風險嗎？如果需要治療，你的存款又能支撐多久？</p>
 <div class="stat"><div><small>新發癌症人數</small><b>138,051 人</b></div><div><small>癌症時鐘</small><b>每 3 分 48 秒</b><small>就有 1 人確診癌症</small></div><div><small>統計年度</small><b>民國112年</b><small>（2023年）</small></div><div><small>報告公布</small><b>2025/12/30</b><small>國健署記者會</small></div></div>
 <p class="src">來源：衛生福利部「公布112年國人癌症登記資料分析結果」新聞稿（<a href="https://www.mohw.gov.tw/cp-16-84987-1.html" target="_blank">mohw.gov.tw</a>）；國民健康署《癌症登記報告 2023》，114年12月出版（<a href="https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=269&pid=19733" target="_blank">hpa.gov.tw</a>）。統計對象為侵襲癌新發個案，不含原位癌。網頁數據為靜態引用，不會自動更新。</p>
 <button class="btn" onclick="go(1)">開始探索 →</button></div>
-<div class="grid" style="margin-top:12px">
+<div class="slidehd" style="margin-top:22px"><span><b>◆</b> 癌症風險地圖</span><span>先想一想</span></div>
+<h2 style="margin:.2em 0">生病時，<em class="hl">錢</em>會怎麼變化？</h2><p class="small">左右滑動看 4 張小卡 →</p>
+<div class="carousel" id="intro">
+<div class="slide"><div class="shd"><span><b>◆</b> 癌症風險地圖</span><span>01／04</span></div><p class="small" style="color:#a99f8f">財務韌性 ｜ 治療期間的收入</p>
+<h3>如果需要治療，<span class="hl">你能暫停工作多久？</span></h3>
+<div class="tl"><span>1個月</span><span>3個月</span><span>半年</span><span>1年</span><span>更久？</span></div>
+<p>請假或許不難，<b style="color:#f2ece1">收入能停多久</b>才是真正的問題。</p><div class="sft">◆ 癌症風險地圖</div></div>
+<div class="slide"><div class="shd"><span><b>◆</b> 癌症風險地圖</span><span>02／04</span></div>
+<h3>身體需要休息，<span class="hl">帳單照常報到</span></h3>
+<ol class="num"><li>① 房租或房貸</li><li>② 每月保費、貸款</li><li>③ 孩子與家人的開銷</li><li>④ 日常吃穿與交通</li></ol>
+<p>治療期間，這些固定支出不會因此暫停。</p><p class="small" style="color:#a99f8f">※ 項目為一般情境舉例，依個人狀況不同。</p><div class="sft">◆ 癌症風險地圖</div></div>
+<div class="slide"><div class="shd"><span><b>◆</b> 癌症風險地圖</span><span>03／04</span></div>
+<h3>最常見的壓力：<span class="hl">一邊少、一邊多</span></h3>
+<div class="vs"><div><b>收入 ↓</b>暫停工作、減少工時、獎金變少</div><div><b>支出 ↑</b>自費藥物、交通、營養、看護</div></div>
+<p>缺口往往不是一次性的，而是<b style="color:#f2ece1">持續好幾個月</b>。</p><div class="sft">◆ 癌症風險地圖</div></div>
+<div class="slide"><div class="shd"><span><b>◆</b> 癌症風險地圖</span><span>04／04</span></div>
+<h3>保障這件事，<span class="hl">要在健康時準備</span></h3>
+<div class="vs"><div><b>還沒準備</b>只能動用存款、向家人求助、延後治療選擇</div><div><b>提早準備</b>有一筆現金流，讓治療與生活多一些選擇</div></div>
+<ol class="num"><li>① 盤點現有保單</li><li>② 估算可能缺口</li><li>③ 依需求調整</li><li>④ 定期回頭檢視</li></ol>
+<p class="small" style="color:#a99f8f">※ 投保須經核保，已罹病者可能無法投保或有除外條件。</p><div class="sft">◆ 癌症風險地圖</div></div>
+</div>
+<div style="text-align:center"><button class="btn" onclick="go(1)">看完了，進入第一步 →</button></div><div class="grid" style="margin-top:12px">
 <div class="card"><h3><span class="ic">🌱</span>① 生活風險</h3><p>10題日常生活檢視，了解值得注意的風險因子。</p></div>
 <div class="card"><h3><span class="ic">🗺️</span>② 癌症探索地圖</h3><p>依性別與年齡，認識常見癌症與公費篩檢。</p></div>
 <div class="card"><h3><span class="ic">💡</span>③ 健保以外的費用</h3><p>用5個範例看懂檢查、手術、放療、藥物與生活開銷。</p></div>
@@ -110,7 +178,7 @@ h2 .ic,h3 .ic{display:inline-grid;place-items:center;width:1.7em;height:1.7em;bo
 
 <!-- STAGE 1 -->
 <section class="stage" id="s1">
-<h2><span class="ic">🌱</span>你的日常生活，有哪些值得注意的風險因子？</h2>
+<h2><span class="ic">🌱</span>你的日常生活，有哪些<em class="hl">值得注意的風險因子</em>？</h2>
 <p class="lead">勾選符合你的項目（可複選）；點「i」看簡短衛教與改善建議。</p>
 <div class="card" style="position:sticky;top:46px;z-index:5;padding:10px 16px">已勾選 <b id="qc" style="color:var(--o);font-size:1.3em">0</b> / 10 項</div>
 <div class="grid" id="quiz"></div>
@@ -120,7 +188,7 @@ h2 .ic,h3 .ic{display:inline-grid;place-items:center;width:1.7em;height:1.7em;bo
 
 <!-- STAGE 2 -->
 <section class="stage" id="s2">
-<h2><span class="ic">🗺️</span>不同性別、年齡，應關注哪些癌症？</h2>
+<h2><span class="ic">🗺️</span>不同性別、年齡，<em class="hl">應關注哪些癌症</em>？</h2>
 <div class="card"><div class="fg"><div><label>性別</label><div class="seg" id="sexSeg"><button data-v="m" class="on">男性</button><button data-v="f">女性</button></div></div>
 <div><label>年齡層</label><div class="seg" id="ageSeg"><button data-v="20">20–39</button><button data-v="40" class="on">40–49</button><button data-v="50">50–64</button><button data-v="65">65+</button></div></div></div>
 <p class="src" style="margin:8px 0 0">性別與年齡只用於顯示相關衛教與公費篩檢資訊，不代表個人診斷或罹癌機率。</p></div>
@@ -132,7 +200,7 @@ h2 .ic,h3 .ic{display:inline-grid;place-items:center;width:1.7em;height:1.7em;bo
 
 <!-- STAGE 3 -->
 <section class="stage" id="s3">
-<h2><span class="ic">💡</span>你知道癌症治療，除了健保還可能有哪些費用嗎？</h2>
+<h2><span class="ic">💡</span>癌症治療，<em class="hl">除了健保</em>還可能有哪些費用？</h2>
 <p class="lead">台灣健保涵蓋大部分標準治療，但部分新藥、新技術或特殊醫材，可能需要符合條件或自行負擔差額。</p>
 <button class="btn o" onclick="tutorial()">我不知道，帶我看範例</button>
 <div class="note" style="margin-top:8px"><span class="ver">已查證</span> 金額取自政府或醫院公開資料；<span class="demo">示範值</span> 為教學用假設範圍，非任何醫院報價。實際費用以主治醫師團隊評估及醫院收費為準。</div>
@@ -145,7 +213,7 @@ h2 .ic,h3 .ic{display:inline-grid;place-items:center;width:1.7em;height:1.7em;bo
 
 <!-- STAGE 4 -->
 <section class="stage" id="s4">
-<h2><span class="ic">🧮</span>如果真的需要治療，你需要準備多少資金？</h2>
+<h2><span class="ic">🧮</span>如果真的需要治療，你需要<em class="hl">準備多少資金</em>？</h2>
 <div class="seg" id="modeSeg"><button data-v="know" class="on">我知道費用</button><button data-v="ex">使用範例</button><button data-v="cmp">比較情境</button></div>
 <div id="exLoaded"></div>
 <div class="card" id="calcForm"><div class="fg">
@@ -167,7 +235,7 @@ h2 .ic,h3 .ic{display:inline-grid;place-items:center;width:1.7em;height:1.7em;bo
 
 <!-- STAGE 5 -->
 <section class="stage" id="s5">
-<h2><span class="ic">📊</span>你的抗癌資金準備狀況</h2>
+<h2><span class="ic">📊</span>你的<em class="hl">抗癌資金</em>準備狀況</h2>
 <div class="card noprint"><label style="margin:0">收入中斷／休養期間</label><div class="seg" id="monSeg"><button data-v="6">6個月</button><button data-v="12">12個月</button><button data-v="24">24個月</button><button data-v="36">3年（36個月）</button></div><p class="src" style="margin:6px 0 0">預設以3年（36個月）為<span class="demo">示範假設</span>，非官方平均值；實際治療與休養期間依癌別、分期與個人狀況差異很大。</p></div>
 <div class="card" id="sumHead"></div>
 <div class="charts"><div class="card"><h3>資金需求組成</h3><div id="pie"></div></div><div class="card"><h3>需求 vs. 可用資源</h3><div id="bars"></div></div></div>
@@ -178,10 +246,11 @@ h2 .ic,h3 .ic{display:inline-grid;place-items:center;width:1.7em;height:1.7em;bo
 
 <!-- STAGE 6 -->
 <section class="stage" id="s6">
-<h2><span class="ic">✅</span>看完試算，你可以再檢視哪些保障？</h2>
+<h2><span class="ic">✅</span>看完試算，可以<em class="hl">再檢視哪些保障</em>？</h2>
 <p class="lead">以下是中立的檢視清單，幫助你整理問題；不代表需要購買任何商品，也不是所有費用都能由保險理賠。</p>
 <div class="card chk" id="chk"></div>
-<button class="btn" onclick="genList()">產生我的保障檢視清單</button>
+<div class="card"><h3><span class="ic">📋</span>我的保障盤點表</h3><p class="small">依你目前所知勾選即可；不確定的項目，可以帶著保單向業務或保險公司確認。</p><div class="tw"><table class="ckt"><tr><th>保障類型</th><th>已經有了</th><th>還有缺口</th><th>不確定</th></tr>
+<tr><td>醫療</td><td><input type="radio" name="cv0" value="已經有了" aria-label="醫療已經有了"></td><td><input type="radio" name="cv0" value="還有缺口" aria-label="醫療還有缺口"></td><td><input type="radio" name="cv0" value="不確定" aria-label="醫療不確定"></td></tr><tr><td>癌症</td><td><input type="radio" name="cv1" value="已經有了" aria-label="癌症已經有了"></td><td><input type="radio" name="cv1" value="還有缺口" aria-label="癌症還有缺口"></td><td><input type="radio" name="cv1" value="不確定" aria-label="癌症不確定"></td></tr><tr><td>重大傷病</td><td><input type="radio" name="cv2" value="已經有了" aria-label="重大傷病已經有了"></td><td><input type="radio" name="cv2" value="還有缺口" aria-label="重大傷病還有缺口"></td><td><input type="radio" name="cv2" value="不確定" aria-label="重大傷病不確定"></td></tr><tr><td>失能</td><td><input type="radio" name="cv3" value="已經有了" aria-label="失能已經有了"></td><td><input type="radio" name="cv3" value="還有缺口" aria-label="失能還有缺口"></td><td><input type="radio" name="cv3" value="不確定" aria-label="失能不確定"></td></tr></table></div><p class="small">※ 醫療＝住院／手術／實支實付；癌症＝罹癌一次金或癌症醫療；重大傷病＝領有重大傷病卡給付；失能＝因病或意外失能之給付或扶助。各保單定義不同，以條款為準。</p></div><button class="btn" onclick="genList()">產生我的保障檢視清單</button>
 <div id="listOut" style="display:none" class="card"><textarea id="listTxt" rows="12" readonly></textarea><button class="btn t s" onclick="copyTxt(document.getElementById('listTxt').value)">📋 複製</button><button class="btn t s" onclick="dl('保障檢視清單.txt',document.getElementById('listTxt').value)">⬇ 下載</button></div>
 <details class="card" style="margin-top:20px"><summary>（選讀）業務人員可另行說明的商品資訊：富邦人壽男女專屬防癌險</summary>
 <p class="src">以下僅為商品摘要，非推薦或保證；是否需要、保額多少，應依個人狀況評估。給付條件以保單條款為準。</p>
@@ -203,6 +272,8 @@ function toast(t){const e=$('toast');e.textContent=t;e.style.display='block';cle
 const SN=['首頁','生活風險','癌症地圖','健保外費用','資金試算','準備狀況','保障檢視'];
 $('steps').innerHTML=SN.map(()=>'<i></i>').join('');
 function go(n){document.querySelectorAll('.stage').forEach((s,i)=>s.classList.toggle('on',i==n));document.querySelectorAll('#steps i').forEach((e,i)=>{e.classList.toggle('on',i<=n);e.classList.toggle('last',i==n)});$('stepname').innerHTML=SN[n]+(n==6?' <span class="cheer">🎉</span>':'');scrollTo(0,0);if(n==5)drawRes();if(n==4)calc()}
+
+(function(){const ss=[...document.querySelectorAll('.stage')].slice(1),N=ss.length;ss.forEach((s,i)=>{const h=document.createElement('div');h.className='slidehd';h.innerHTML=`<span><b>◆</b> 癌症風險地圖</span><span>${String(i+1).padStart(2,'0')}／${String(N).padStart(2,'0')}</span>`;s.prepend(h);const f=document.createElement('div');f.className='slideft';f.innerHTML='<b>◆</b> 癌症風險地圖 ｜ 衛教與財務規劃參考';s.append(f)})})();
 go(0);
 // ---- Stage1
 const QE={"smoke": "🚭", "alc": "🍺", "meat": "🌭", "veg": "🥦", "ex": "🏃", "wt": "⚖️", "sleep": "🌙", "env": "🏭", "fam": "👨\u200d👩\u200d👧", "noscr": "🔍"};
@@ -407,6 +478,6 @@ function restart(){F.forEach(k=>$('c_'+k).value=DEF[k]);resetQuiz();curC=null;dr
 // ---- Stage6
 const CK=['我目前的癌症一次金（罹癌時一次給付的保障）額度，是否足以支應試算出的缺口？','我的醫療險（實支實付、住院、手術）給付條件為何？是否涵蓋門診治療、自費藥物或特殊醫材？','各保單有哪些給付上限、限額、等待期或除外責任？','如果休養1–2年，期間的現金流（收入、固定支出、保費）如何安排？','我是否有約3–6個月以上生活費的緊急預備金？','家人可提供哪些支援（經濟、照顧人力）？是否已和家人討論過？','我的保單是否有豁免保費條款？','是否需要找專業人員（醫師、保險業務、理財顧問）協助檢視？'];
 $('chk').innerHTML='<p class="src" style="margin:0 0 6px">勾選「已確認」的項目，未勾選的會列為待確認。</p>'+CK.map((c,i)=>`<label><input type="checkbox" id="ck${i}"><span>${c}</span></label>`).join('');
-function genList(){const r=comp(val());const t=`【我的保障檢視清單】\n試算情境：總需求約 ${wan(r.total)}，${r.gap>0?'缺口約 '+wan(r.gap):'資源尚足'}（模擬，非報價）\n\n待確認：\n${CK.filter((c,i)=>!$('ck'+i).checked).map(c=>'□ '+c).join('\n')||'（無）'}\n\n已確認：\n${CK.filter((c,i)=>$('ck'+i).checked).map(c=>'■ '+c).join('\n')||'（無）'}\n\n※ 本清單僅供自我檢視，不代表需要購買任何保險商品；並非所有醫療費用都能由保險理賠，實際以保單條款為準。`;
-$('listTxt').value=t;$('listOut').style.display='block';$('listOut').scrollIntoView({behavior:'smooth'})}
+function genList(){const r=comp(val());let t=`【我的保障檢視清單】\n試算情境：總需求約 ${wan(r.total)}，${r.gap>0?'缺口約 '+wan(r.gap):'資源尚足'}（模擬，非報價）\n\n待確認：\n${CK.filter((c,i)=>!$('ck'+i).checked).map(c=>'□ '+c).join('\n')||'（無）'}\n\n已確認：\n${CK.filter((c,i)=>$('ck'+i).checked).map(c=>'■ '+c).join('\n')||'（無）'}\n\n※ 本清單僅供自我檢視，不代表需要購買任何保險商品；並非所有醫療費用都能由保險理賠，實際以保單條款為準。`;
+const CV=['醫療','癌症','重大傷病','失能'].map((n,i)=>{const r=document.querySelector(`input[name=cv${i}]:checked`);return `・${n}：${r?r.value:'未填'}`}).join('\n');t=t.replace('\n\n待確認：','\n\n【保障盤點】\n'+CV+'\n\n待確認：');$('listTxt').value=t;$('listOut').style.display='block';$('listOut').scrollIntoView({behavior:'smooth'})}
 </script></body></html>
